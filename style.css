@@ -1,22 +1,47 @@
+@import "./utilidades/colors.css";
+@import "./utilidades/fonts.css";
+@import "./utilidades/global.css";
+@import "./utilidades/bicicletas-listas.css";
+
 body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--cor-11);
+  padding-bottom: 600px;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin: 0px;
 }
 
 ul {
-  margin: 0px;
   padding: 0px;
   list-style: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-/* ---HEADER--- */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+img[src$=".jpg"] {
+  border-radius: 4px;
+}
+
+/* --------------HEADER-------------- */
 
 .header-bg {
-  background-color: #000000;
+  background-color: var(--cor-12);
 }
 
 .header {
@@ -39,11 +64,8 @@ a {
 }
 
 .header-menu a {
-  color: #ffffff;
-  padding: 16px 0px;
   display: inline-block;
-  font-size: 18px;
-  line-height: 32px;
+  padding: 16px 0px;
   position: relative;
 }
 
@@ -52,7 +74,7 @@ a {
   display: block;
   height: 2px;
   width: 0px;
-  background-color: #ffffff;
+  background-color: var(--cor-0);
   margin-top: 4px;
   transition: 0.3s;
   position: absolute;
@@ -67,12 +89,12 @@ a {
     gap: 20px;
   }
   .header-menu a {
-    background: #111111;
+    background: var(--cor-11);
     padding: 12px 16px;
     border-radius: 4px;
   }
   .header-menu a:hover {
-    background: #2e2e2e;
+    background: var(--cor-10);
   }
   .header-menu a::after {
     display: none;
@@ -89,5 +111,155 @@ a {
   }
   .header-menu a::after {
     display: none;
+  }
+}
+
+/* --------------INTRODUÇÃO-------------- */
+
+.introducao-bg {
+  background: var(--cor-12);
+  color: var(--cor-0);
+  box-shadow: inset 0 -120px var(--cor-0);
+}
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introducao-conteudo {
+  align-self: end;
+  padding-bottom: 200px;
+}
+
+.introducao img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.introducao h1 {
+  margin-bottom: 32px;
+}
+
+.introducao p {
+  margin-bottom: 20px;
+  color: var(--cor-5);
+}
+
+@media (max-width: 800px) {
+  .introducao-bg {
+    background: var(--cor-11);
+    padding-top: 40px;
+    box-shadow: inset 0 -60px var(--cor-0);
+  }
+  .introducao {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .introducao-conteudo {
+    padding-bottom: 0px;
+  }
+  .introducao h1 {
+    margin-bottom: 16px;
+  }
+  .introducao img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+/* --------------TECNOLOGIA-------------- */
+
+.tecnologia-bg {
+  background-color: var(--cor-11);
+  box-shadow: inset 0 80px var(--cor-0), inset 0 -80px var(--cor-0);
+}
+
+.tecnologia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tecnologia-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.tecnologia-conteudo {
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.tecnologia-conteudo > span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tecnologia-conteudo h2 {
+  margin-bottom: 32px;
+}
+
+.tecnologia-conteudo > p {
+  margin-bottom: 20px;
+}
+
+.tecnologia a {
+  margin-bottom: 80px;
+}
+
+.tecnologia-vantagens {
+  display: flex;
+  gap: 40px;
+}
+
+.tecnologia-vantagens h3 {
+  margin-bottom: 8px;
+  width: max-content;
+}
+
+.tecnologia-vantagens img {
+  margin-bottom: 8px;
+  width: 24px;
+}
+
+@media (max-width: 800px) {
+  .tecnologia-bg {
+    box-shadow: none;
+  }
+  .tecnologia {
+    grid-template-columns: 1fr;
+  }
+  .tecnologia-conteudo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .tecnologia-imagem {
+    display: none;
+  }
+  .tecnologia a {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tecnologia-vantagens {
+    flex-direction: column;
   }
 }
